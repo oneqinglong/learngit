@@ -1,0 +1,33 @@
+git config --global参数
+pwd 显示当前目录
+git init:初始化
+
+git add：加到暂存区。
+git commit: 加到分支当中。
+
+git status:查看状态，知道有没有被修改
+git diff：查看修改的内容。
+git log --pretty=oneline: 查看版本修改历史。
+git reflog --记录你的每一次命令
+
+git reset --hard HEAD^
+git reset --hard commit ID (改了add了commit了但是没有推送到远程版本库)
+git reset HEAD readme.txt： 把文件从暂存区移到工作区(改了add了但是没有commit)
+git checkout -- readme.txt :舍去工作区的修改（改了没add）
+
+rm test.txt : 删除一个文件。
+
+
+$ ssh-keygen -t rsa -C "youremail@example.com"
+
+git remote add origin git@github.com:oneqinglong/learning.git
+git remote add origin https://github.com/oneqinglong/learngit.git
+git push -u origin master
+
+
+查看分支：git branch
+创建分支：git branch <name>
+切换分支：git checkout <name>
+创建+切换分支：git checkout -b <name>
+合并某分支到当前分支：git merge <name>
+删除分支：git branch -d <name>
