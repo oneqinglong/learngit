@@ -17,13 +17,22 @@ git checkout -- readme.txt :舍去工作区的修改（改了没add）
 
 rm test.txt : 删除一个文件。
 
-
+----------------------------------------------
+设置电脑公钥私钥
 $ ssh-keygen -t rsa -C "youremail@example.com"
 
+创建github账户的仓库
+
+然后将本地的仓库remote到github仓库，下面两个命令都可以。
 git remote add origin git@github.com:oneqinglong/learning.git
 git remote add origin https://github.com/oneqinglong/learngit.git
-git push -u origin master
 
+第一次向github仓库进行推送。
+git push -u origin master
+git push origin master 
+
+----------------------------------------------
+分支
 
 查看分支：git branch
 创建分支：git branch <name>
@@ -34,6 +43,7 @@ git push -u origin master
 
 git log --graph --pretty=oneline --abbrev-commit  查看分支合并图
 
+---------------------------------------------
 git stash 把当前工作现场储存起来。
 git stash list:回来时查看。
 git stash apply恢复 git stash drop来删除
@@ -47,7 +57,7 @@ git remote：查看远程仓库信息
 git remote -v :查看详细信息
 git push origin branch-name 本地推送分支
 git pull抓取最新分支
-`git checkout -b branch-name origin/branch-name 本地创建和远程分支对应的分支 
+git checkout -b branch-name origin/branch-name 本地创建和远程分支对应的分支 
 git branch --set-upstream branch-name origin/branch-name:本地分支和远程分支创建联系
 git pull 再抓取看看有没有冲突
 没有的话，push
