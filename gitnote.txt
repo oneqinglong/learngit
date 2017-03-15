@@ -32,7 +32,7 @@ git push -u origin master
 git push origin master 
 
 ----------------------------------------------
-分支
+分支 本地的分支
 
 查看分支：git branch
 创建分支：git branch <name>
@@ -44,6 +44,7 @@ git push origin master
 git log --graph --pretty=oneline --abbrev-commit  查看分支合并图
 
 ---------------------------------------------
+本地现场
 git stash 把当前工作现场储存起来。
 git stash list:回来时查看。
 git stash apply恢复 git stash drop来删除
@@ -53,6 +54,8 @@ $ git stash apply stash@{0}
 
 git branch -D feature-vulcan 强行删除
 
+-------------------------------------------
+远程分支
 git remote：查看远程仓库信息
 git remote -v :查看详细信息
 git push origin branch-name 本地推送分支
@@ -62,3 +65,39 @@ git branch --set-upstream branch-name origin/branch-name:本地分支和远程�
 git pull 再抓取看看有没有冲突
 没有的话，push
 有的话，手动解决，commit push
+--------------------------------------
+标签 版本太多找起来不方便，用标签方便。
+git tag v1.0 打标签 
+git tag v0.9 6224937 对以前commit打标签
+git tag 查看标签
+git show v0.9 查看标签详细信息
+git tag -a v0.1 -m "version 0.1 released" 3628164 创建带有说明的标签
+git tag -s v0.2 -m "signed version 0.2 released" fec145a  用ssh私钥创立标签。
+
+
+
+命令git tag <name>用于新建一个标签，
+默认为HEAD，
+也可以指定一个commit id；
+git tag -a <tagname> -m "blablabla..."可以指定标签信息；
+git tag -s <tagname> -m "blablabla..."可以用PGP签名标签；
+命令git tag可以查看所有标签。
+
+git tag -d v0.1 删除本地标签
+远程推送标签: git push origin v1.0
+一次性推送本地所有未推送的标签:git push origin --tags
+$ git push origin :refs/tags/v0.9 删除远程标签
+
+
+.gitignore：被忽略的文件。
+强制被忽略的文件添加文件
+git add -f App.class
+
+git check-ignore 检查ignore里面哪些规则写错了。
+
+----------------------------
+配置别名
+git config --global alias.st status
+$ git config --global alias.last 'log -1' //配置last表示最后一次提交。
+cat .git/config 
+
